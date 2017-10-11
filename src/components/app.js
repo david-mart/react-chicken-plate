@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Switch, Route } from "react-router-dom";
-import Proposals from "./proposals";
-import Map from "./map";
+import Proposals from "components/proposals";
+import Map from "components/map";
 
 class App extends React.Component {
   render() {

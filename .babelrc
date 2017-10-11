@@ -1,13 +1,16 @@
 {
-  "presets": [
-    "react",
-    "stage-1"
-  ],
+  "presets": ["react", "stage-1"],
   "env": {
     "development": {
-      "presets": [
-        "env",
-        "react-hmre"
+      "presets": ["env", "react-hmre"],
+      "plugins": [
+        [
+          "module-resolver",
+          {
+            "root": ["./src"],
+            "alias": "./tools/aliases.js"
+          }
+        ]
       ]
     },
     "production": {
@@ -27,12 +30,26 @@
       ],
       "plugins": [
         "transform-react-constant-elements",
-        "transform-react-remove-prop-types"
+        "transform-react-remove-prop-types",
+        [
+          "module-resolver",
+          {
+            "root": ["./src"],
+            "alias": "./tools/aliases.js"
+          }
+        ]
       ]
     },
     "test": {
-      "presets": [
-        "env"
+      "presets": ["env"],
+      "plugins": [
+        [
+          "module-resolver",
+          {
+            "root": ["./src"],
+            "alias": "./tools/aliases.js"
+          }
+        ]
       ]
     }
   }
